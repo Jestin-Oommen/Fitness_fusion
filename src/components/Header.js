@@ -22,8 +22,8 @@ const Header = () => {
         <Box sx={{mt:3, mr:3}}>
           <nav style={{display:"flex",gap:10}}>
             <a href="/">HOME</a> 
-            <a href="/css/">ABOUT</a> 
-            <a href="/diet">SERVICES</a> 
+            <a href="#about">ABOUT</a> 
+            <a href="#features">SERVICES</a> 
             <a href="/python/">BLOG</a>
           </nav>
         </Box>

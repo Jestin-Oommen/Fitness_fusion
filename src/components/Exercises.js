@@ -53,7 +53,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
       </Stack>
       <Stack sx={{ mt: { lg: '114px', xs: '70px' } }} alignItems="center">
         {exercises.length > 9 && (
-          <Pagination
+          <Pagination sx={{bgcolor:"white", borderRadius:"2rem"}}
             color="standard"
             shape="rounded"
             defaultPage={1}

@@ -7,7 +7,7 @@ import Community from "../assets/community_icon.png";
 
 const Features = () => {
   return (
-    <Box bgcolor={"#03001C"} color={"white"}
+    <Box id="features" bgcolor={"#03001C"} color={"white"}
     sx={{mt:"25px"}}>
       <Typography textAlign={"center"} sx={{mb:"25px",fontSize:"40px", fontWeight:700}}>
       FEATURES

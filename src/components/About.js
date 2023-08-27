@@ -4,7 +4,7 @@ import { Box,Typography, Stack } from '@mui/material';
 
 const About = () => {
   return (
-    <Box sx={{bgcolor:"#03001C", color:"white"}}>
+    <Box id="about" sx={{bgcolor:"#03001C", color:"white"}}>
       <Box textAlign={"center"}
       sx={{mt:2, mb:2}}>
       <Typography 
