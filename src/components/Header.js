@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography, Stack } from "@mui/material";
 import HeaderImage from "../assets/header.png";
 import Logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -19,12 +20,12 @@ const Header = () => {
       }}>
         <a href="/"><img src={Logo} alt="logo" width="73px" height="76px"/></a>
 
-        <Box sx={{mt:3, mr:3}}>
-          <nav style={{display:"flex",gap:10}}>
-            <a href="/">HOME</a> 
-            <a href="#about">ABOUT</a> 
-            <a href="#features">SERVICES</a> 
-            <a href="/python/">BLOG</a>
+        <Box sx={{mt:3, mr:3, }}>
+          <nav style={{display:"flex",gap:10, }}>
+            <a style={{textDecoration:"none", color:"white", fontWeight:"700"}} href="/">HOME</a> 
+            <a style={{textDecoration:"none", color:"white", fontWeight:"700"}} href="#about">ABOUT</a> 
+            <a style={{textDecoration:"none", color:"white", fontWeight:"700"}} href="#features">SERVICES</a> 
+            <a style={{textDecoration:"none", color:"white", fontWeight:"700"}} href="#blog">BLOG</a>
           </nav>
         </Box>
       </Stack>
@@ -32,8 +33,8 @@ const Header = () => {
       <Box sx={{ color:"white", display:"flex",flexDirection:"column",
     justifyContent:"center",alignItems:"center",mt:15}}>
         
-        <Typography sx={{fontSize:"64px",fontWeight:"700"}}>FITNESS FUSION</Typography>
-        <Typography sx={{fontSize:"20px",fontWeight:"700"}}>Unlock Your Best Self with our Diet and Fitness Companion</Typography>
+        <Typography sx={{fontSize:"64px",fontWeight:"700", textAlign:"center"}}>FITNESS FUSION</Typography>
+        <Typography sx={{fontSize:"20px",fontWeight:"700", textAlign:"center"}}>Unlock Your Best Self with our Diet and Fitness Companion</Typography>
       </Box>
     </Box>
   );

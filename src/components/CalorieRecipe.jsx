@@ -3,41 +3,37 @@ import { styled } from 'styled-components';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css'
 import { Link } from 'react-router-dom';
-import Recipe from '../pages/Recipe';
 
 
-function Popular() {
+
+function CalorieRecipe() {
 
   const isLargeScreen = window.innerWidth >= 1024;
 
-    const [popular,setPopular]=useState([]);
+    const [calorieRecipe,setCalorieRecipe]=useState([]);
 
     useEffect(()=>{
-        getPopular();
+        getCalorieRecipe();
     },[])
 
     
-    const getPopular=async()=>{
+    const getCalorieRecipe=async()=>{
 
-      const check=localStorage.getItem('popular');
-
-      if(check){
-        setPopular(JSON.parse(check));
-      }
-      else{
-        const api=await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_RecipeAPI_KEY}&number=9`)
+      
+        const api=await fetch(`https://api.spoonacular.com/recipes/findByNutrients?random=true&maxCalories=1900&apiKey=${process.env.REACT_APP_RecipeAPI_KEY}&number=9`)
+        
         const data=await api.json();
         
-        localStorage.setItem("popular",JSON.stringify(data.recipes));
-        setPopular(data.recipes)
-      }
+        
+        setCalorieRecipe(data)
+      
     
     }
   return (
     <div>
       
           <Wrapper>
-            <h3>Popular Picks</h3>
+            <h3>Based on Daily Intake</h3>
             <Splide options={{
               perPage:isLargeScreen ? 4:2,
               arrows:true,
@@ -46,11 +42,11 @@ function Popular() {
               gap:"5rem"
 
             }}>
-            {popular.map((recipe)=>{
+            {calorieRecipe.map((recipe)=>{
               return(
                 <SplideSlide key={recipe.id}>
                 <Card>
-                  <Link to={"/recipe/"+recipe.id}>
+                <Link to={"/recipe/"+recipe.id}>
                   <p>{recipe.title}</p>
                   <img src={recipe.image} alt={recipe.title}/>
                   <Gradient/>
@@ -66,13 +62,14 @@ function Popular() {
     </div>
   )
 }
-
 const Wrapper=styled.div`
   //margin:4rem 0rem;
   margin-left:2rem;
   margin-right:2rem;
 
-  h3{
+  
+
+h3{
   font-size: 2rem;
   color: white;
   line-height: 2.5rem;
@@ -82,7 +79,6 @@ const Wrapper=styled.div`
 
 const Card=styled.div`
   min-height: 25rem;
-  min-width: 10rem;
   border-radius:2rem;
   overflow: hidden;
   position: relative;
@@ -123,4 +119,4 @@ const Gradient=styled.div`
 
 `
 
-export default Popular
+export default CalorieRecipe

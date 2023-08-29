@@ -8,13 +8,16 @@ function Recipe() {
     const[details,setDetails]=useState({});
     const[activeTab,setActiveTab]=useState("instructions");
     let params=useParams();
+
+    //console.log(details.analyzedInstructions.Objects.steps)
+    console.log(details)
+    
     const fetchDetails=async()=>{
         const data=await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_RecipeAPI_KEY}`)
-        
-        
-        
         const detailData= await data.json();
         setDetails(detailData);
+        
+        
     }
 
     useEffect(()=>{
@@ -28,7 +31,7 @@ function Recipe() {
     <DetailWrapper>
       
       <div>
-        <h2>{details.title}</h2>
+        <h2>{details.title} {details.readyInMinutes}minutes</h2>
         <img src={details.image} alt={details.title}/>
       </div>
       <Info >
@@ -38,8 +41,10 @@ function Recipe() {
         </div>
         {activeTab ==="instructions" && (
             <div>
-            <h3 dangerouslySetInnerHTML={{__html: details.summary}}></h3>
+            <h3 dangerouslySetInnerHTML={{__html: details.summary}}></h3> <br/>
             <h3 dangerouslySetInnerHTML={{__html:details.instructions}}></h3>
+            <br/>
+
         </div>
        
        )}
@@ -48,8 +53,10 @@ function Recipe() {
             <ul>
             {details.extendedIngredients.map((ingredient)=>(
               <li key={ingredient.id}>{ingredient.original}</li>
+
   
             ))}  
+            
           </ul>
        )}
         

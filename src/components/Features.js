@@ -24,7 +24,7 @@ const Features = () => {
             
         </Box>
         <Box textAlign={"center"}>
-            <img src={Community} alt="diet"/>
+            <a href='https://shorturl.at/GINOY' target="_blank"><img src={Community} alt="diet"/></a>
             <Typography sx={{fontSize:"40px",fontWeight:"700"}}>Community</Typography>
             <Typography sx={{fontSize:"32px",fontWeight:"700"}}>Food and Fitness</Typography>
             

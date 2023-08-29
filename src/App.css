@@ -12,8 +12,23 @@ body {
 }
 
 .dietHeaderImg{
-  border-radius: 2%;
+  
+  border-bottom-left-radius: 2%;
+  border-top-left-radius: 5%
+  ;
 }
+
+.white-border {
+  
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+.btn-white{
+  background-color: #fff;
+  font-weight: bold;
+}
+
 /* 
 Workout page */
 

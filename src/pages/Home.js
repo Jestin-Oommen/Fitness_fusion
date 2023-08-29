@@ -7,10 +7,10 @@ import Blog from '../components/Blog.js'
 const Home = () => {
   return (
     <div>
-      {/* <Navbar/> */}
+      {/* <Navbar/>  */}
       <Header/>
       <About/>
-      <Features/>
+      <Features/> 
       <Blog/>
     </div>
   )

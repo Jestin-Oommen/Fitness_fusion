@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 function Viggie() {
 
+  const isLargeScreen = window.innerWidth >= 1024;
 
     const [veggie,setVeggie]=useState([]);
 
@@ -37,7 +38,7 @@ function Viggie() {
           <Wrapper>
             <h3>Our Vegetarian Picks</h3>
             <Splide options={{
-              perPage:3,
+              perPage:isLargeScreen ? 4:2,
               arrows:true,
               pagination:false,
               drag:"free",

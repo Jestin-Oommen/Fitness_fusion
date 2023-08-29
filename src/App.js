@@ -10,10 +10,13 @@ import ExerciseDetails from './pages/ExerciseDetails';
 import Cuisine from './pages/Cuisine';
 import Searched from './pages/Searched';
 import Recipe from './pages/Recipe';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 const App = () => {
   return (
     <Box>
+      
       <Routes>
         
       <Route path="/" element={<Home/>} />
@@ -26,7 +29,9 @@ const App = () => {
 
 
 
+
       </Routes>
+      <Footer/>
     </Box>
   )
 }
