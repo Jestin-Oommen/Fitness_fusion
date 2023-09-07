@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
-import {Routes, Route} from 'react-router-dom';
-import { Box } from '@mui/material';
+import {Routes, Route, useNavigate} from 'react-router-dom';
+
 import './App.css';
 import Home from './pages/Home';
 import DietPage from './pages/DietPage';
@@ -11,14 +11,29 @@ import Cuisine from './pages/Cuisine';
 import Searched from './pages/Searched';
 import Recipe from './pages/Recipe';
 import Footer from './components/Footer';
-import Header from './components/Header';
+
+import {ClerkProvider,SignedIn,SignedOut,RedirectToSignIn} from "@clerk/clerk-react";
+
+ 
+if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key")
+}
+ 
+const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
+
+
 
 const App = () => {
+  const navigate = useNavigate();
   return (
-    <Box>
-      
+    
+    <ClerkProvider
+      publishableKey={clerkPubKey}
+       navigate={(to) => navigate(to)}
+    >
+      <SignedIn>
       <Routes>
-        
+      
       <Route path="/" element={<Home/>} />
       <Route path="/workout" element={<WorkoutHome/>} />
       <Route path="/exercise/:id" element={<ExerciseDetails />} />
@@ -26,14 +41,21 @@ const App = () => {
       <Route path="/cuisine/:type" element={<Cuisine/>}/>
       <Route path='/searched/:search' element={<Searched/>}/>
       <Route path='/recipe/:name' element={<Recipe/>}/>
-
-
-
-
+      
+        
       </Routes>
       <Footer/>
-    </Box>
-  )
+      </SignedIn>
+      
+      <SignedOut>
+        <RedirectToSignIn />
+      </SignedOut>
+    
+    </ClerkProvider>
+    
+    
+  );
 }
 
-export default App
+ export default App
+

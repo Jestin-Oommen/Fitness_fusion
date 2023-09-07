@@ -23,7 +23,7 @@ const About = () => {
       sx={{display:"flex",flexWrap:"wrap",flexDirection:"row",
       gap:7,justifyContent:"center"}}>
         
-        <Box sx={{width: '357px',height:'396px', 
+        <Box sx={{width: '357px',height:'250px', 
           background:`rgba(48, 30, 103, 0.50)`}} >
         
             <Typography sx={{mb:2, fontSize:"32px",fontWeight:"700"}}>Our Approach</Typography>
@@ -36,7 +36,7 @@ const About = () => {
         
         </Box>
 
-        <Box sx={{width: '357px',height:'396px',background:`rgba(48, 30, 103, 0.50)`}}>
+        <Box sx={{width: '357px',height:'300px',background:`rgba(48, 30, 103, 0.50)`}}>
         
             <Typography sx={{mb:2, fontSize:"32px",fontWeight:"700"}}>Personalized Diet Plans</Typography>
             <Typography sx={{fontSize:"16px", fontWeight:"700"}}>A healthy diet is the cornerstone of 
@@ -50,7 +50,7 @@ const About = () => {
         
         </Box>
 
-        <Box sx={{width: '357px',height:'396px',background:`rgba(48, 30, 103, 0.50)`}}>
+        <Box sx={{width: '357px',height:'300px',background:`rgba(48, 30, 103, 0.50)`}}>
         
             <Typography sx={{mb:2, fontSize:"32px",fontWeight:"700"}}>Expert Guidance</Typography>
             <Typography sx={{fontSize:"16px", fontWeight:"700"}}>We believe that knowledge is power, 

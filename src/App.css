@@ -29,6 +29,11 @@ body {
   font-weight: bold;
 }
 
+.feature_link{
+  text-decoration: none;
+  background:rgba(48, 30, 103, 0.50)
+}
+
 /* 
 Workout page */
 

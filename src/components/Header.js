@@ -3,9 +3,12 @@ import { Box, Typography, Stack } from "@mui/material";
 import HeaderImage from "../assets/header.png";
 import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import { UserButton } from "@clerk/clerk-react";
+
 
 const Header = () => {
   return (
+    
     <Box
       sx={{
         backgroundSize: "cover",
@@ -20,13 +23,15 @@ const Header = () => {
       }}>
         <a href="/"><img src={Logo} alt="logo" width="73px" height="76px"/></a>
 
-        <Box sx={{mt:3, mr:3, }}>
-          <nav style={{display:"flex",gap:10, }}>
+        <Box sx={{mt:3, mr:3,}}>
+          <nav style={{display:"flex",gap:10}}>
             <a style={{textDecoration:"none", color:"white", fontWeight:"700"}} href="/">HOME</a> 
             <a style={{textDecoration:"none", color:"white", fontWeight:"700"}} href="#about">ABOUT</a> 
             <a style={{textDecoration:"none", color:"white", fontWeight:"700"}} href="#features">SERVICES</a> 
             <a style={{textDecoration:"none", color:"white", fontWeight:"700"}} href="#blog">BLOG</a>
+            <Box sx={{}}><UserButton/></Box>
           </nav>
+          
         </Box>
       </Stack>
 
@@ -37,6 +42,8 @@ const Header = () => {
         <Typography sx={{fontSize:"20px",fontWeight:"700", textAlign:"center"}}>Unlock Your Best Self with our Diet and Fitness Companion</Typography>
       </Box>
     </Box>
+    
+    
   );
 };
 

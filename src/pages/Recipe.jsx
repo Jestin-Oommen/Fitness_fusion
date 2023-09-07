@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { styled } from 'styled-components'
 import { useParams } from 'react-router-dom'
 import { Box } from '@mui/material';
+import StarRating from '../components/StarRating';
 
 function Recipe() {
 
@@ -31,8 +32,9 @@ function Recipe() {
     <DetailWrapper>
       
       <div>
-        <h2>{details.title} {details.readyInMinutes}minutes</h2>
+        <h2>{details.title} ({details.readyInMinutes}minutes)</h2>
         <img src={details.image} alt={details.title}/>
+        <StarRating/>
       </div>
       <Info >
         <div style={{direction:"row"}}>
