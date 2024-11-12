@@ -3,6 +3,7 @@ import { Box, Typography,Stack } from '@mui/material';
 import DietIcon from "../assets/dieticon.png";
 import Workout from "../assets/workout_icon.png";
 import Community from "../assets/community_icon.png";
+import { Link } from 'react-router-dom';
 
 
 const Features = () => {
@@ -18,21 +19,21 @@ const Features = () => {
         
       }}>
         <Box textAlign={"center"}>
-            <a className='feature_link' href='/diet'><img src={DietIcon} alt="diet"/>
+            <Link className='feature_link' to='/diet'><img src={DietIcon} alt="diet"/>
             <Typography sx={{fontSize:"40px",fontWeight:"700"}}>Recipes</Typography>
-            <Typography sx={{fontSize:"32px",fontWeight:"700"}}>Cook, eat and log</Typography></a>
+            <Typography sx={{fontSize:"32px",fontWeight:"700"}}>Cook, eat and log</Typography></Link>
             
         </Box>
         <Box textAlign={"center"}>
-            <a className='feature_link' href='https://shorturl.at/GINOY' target="_blank"><img src={Community} alt="diet"/>
+            <Link className='feature_link' to='https://shorturl.at/GINOY' target="_blank"><img src={Community} alt="diet"/>
             <Typography sx={{fontSize:"40px",fontWeight:"700"}}>Community</Typography>
-            <Typography sx={{fontSize:"32px",fontWeight:"700"}}>Food and Fitness</Typography></a>
+            <Typography sx={{fontSize:"32px",fontWeight:"700"}}>Food and Fitness</Typography></Link>
             
         </Box>
         <Box textAlign={"center"}>
-            <a className='feature_link' href='/workout'><img src={Workout} alt="diet"/>
+            <Link className='feature_link' to='/workout'><img src={Workout} alt="diet"/>
             <Typography sx={{fontSize:"40px",fontWeight:"700"}}>Workout</Typography>
-            <Typography sx={{fontSize:"32px",fontWeight:"700"}}>Get Fit. Stay Strong.</Typography></a>
+            <Typography sx={{fontSize:"32px",fontWeight:"700"}}>Get Fit. Stay Strong.</Typography></Link>
             
         </Box>
       </Stack>

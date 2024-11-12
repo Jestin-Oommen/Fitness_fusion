@@ -7,6 +7,8 @@ import Detail from '../components/Detail';
 import ExerciseVideos from '../components/ExerciseVideos';
 import SimilarExercises from '../components/SimilarExercises';
 
+import WorkoutNavbar from '../components/WorkoutNavbar';
+
 const ExerciseDetails = () => {
 
     const [exerciseDetail, setExerciseDetail] = useState({});
@@ -41,6 +43,7 @@ const ExerciseDetails = () => {
   if (!exerciseDetail) return <div>No Data</div>;
   return (
     <Box sx={{ mt: { lg: '96px', xs: '60px' } }}>
+      <WorkoutNavbar/>
       <Detail exerciseDetail={exerciseDetail} />
       <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
       <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} />

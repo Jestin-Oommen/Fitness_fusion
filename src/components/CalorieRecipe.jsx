@@ -6,29 +6,40 @@ import { Link } from 'react-router-dom';
 
 
 
-function CalorieRecipe() {
+function CalorieRecipe({tdee}) {
 
   const isLargeScreen = window.innerWidth >= 1024;
 
     const [calorieRecipe,setCalorieRecipe]=useState([]);
 
     useEffect(()=>{
-        getCalorieRecipe();
-    },[])
+        getCalorieRecipe(tdee);
+    },[tdee])
 
     
-    const getCalorieRecipe=async()=>{
+    const getCalorieRecipe = async (tdee) => {
+      //console.log(tdee);
+      const maxCalorie = tdee ? tdee : 1900;
+      const api = await fetch(`https://api.spoonacular.com/recipes/findByNutrients?random=true&maxCalories=${maxCalorie}&apiKey=${process.env.REACT_APP_RecipeAPI_KEY}&number=9`);
 
-      
-        const api=await fetch(`https://api.spoonacular.com/recipes/findByNutrients?random=true&maxCalories=1900&apiKey=${process.env.REACT_APP_RecipeAPI_KEY}&number=9`)
-        
-        const data=await api.json();
-        
-        
-        setCalorieRecipe(data)
-      
-    
-    }
+if (api.status === 404) {
+  console.error('API endpoint not found:', api.status);
+  // Handle the 404 error as needed
+} else if (!api.ok) {
+  console.error('API request failed with status:', api.status);
+  // Handle other errors as needed
+} else {
+  const responseText = await api.text();
+  //console.log(responseText);
+  try {
+    const data = JSON.parse(responseText);
+    setCalorieRecipe(data);
+  } catch (error) {
+    console.error('Error parsing JSON:', error);
+    // Handle JSON parsing errors as needed
+  }
+}
+    };
   return (
     <div>
       

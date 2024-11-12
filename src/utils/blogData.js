@@ -32,7 +32,17 @@ export const BlogData = [
         img:"https://www.anytimefitness.co.in/wp-content/uploads/2022/09/Fasting.png",
         url:"https://www.anytimefitness.co.in/top-5-tips-for-healthy-fasting/",
         title:"Top 5 Tips For Healthy Fasting"
-    }
+    },
+    {
+        img:"https://www.anytimefitness.co.in/wp-content/uploads/2023/07/bff-campain-thumbnail.jpg",
+        url:"https://www.anytimefitness.co.in/7-effective-fitness-tips-for-beginners/",
+        title:"Effective Fitness Tips For Beginners"
+    },
+    {
+        img:"https://www.fitkituk.com/blog/wp-content/uploads/2022/08/Starting-your-fitness-journey.jpg",
+        url:"https://blogzn.com/start-a-fitness-journey-blog/#:~:text=Tips%20to%20starting%20a%20fitness%20journey%20blog%201,6%20Write%20about%20how%20you%20can%20help%20",
+        title:"15 Tips To Start a Fitness Journey"
+    },
 
 
 ]

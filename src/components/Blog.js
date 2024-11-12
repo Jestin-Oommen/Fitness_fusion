@@ -16,8 +16,8 @@ const Blog = () => {
   return (
     
     <Box id="blog" >
-            <Typography fontSize={"24px"} fontWeight={"bold"}
-            sx={{display:"flex", justifyContent:"center", mt:"2rem", mb:"2rem"}}>FITNESS FUSION BLOG</Typography>
+            <Typography 
+            sx={{fontSize:"40px", fontWeight:700,display:"flex", justifyContent:"center", mt:"2rem", mb:"2rem"}}>FITNESS FUSION BLOG</Typography>
              <Splide style={{}} options={{ 
               perPage:isLargeScreen ? 4:2,
               arrows:true,

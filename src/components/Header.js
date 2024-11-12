@@ -9,7 +9,7 @@ import { UserButton } from "@clerk/clerk-react";
 const Header = () => {
   return (
     
-    <Box
+    <Box id="#home"
       sx={{
         backgroundSize: "cover",
         backgroundAttachment: "local",
@@ -25,7 +25,7 @@ const Header = () => {
 
         <Box sx={{mt:3, mr:3,}}>
           <nav style={{display:"flex",gap:10}}>
-            <a style={{textDecoration:"none", color:"white", fontWeight:"700"}} href="/">HOME</a> 
+            <a style={{textDecoration:"none", color:"white", fontWeight:"700"}} href="#home">HOME</a> 
             <a style={{textDecoration:"none", color:"white", fontWeight:"700"}} href="#about">ABOUT</a> 
             <a style={{textDecoration:"none", color:"white", fontWeight:"700"}} href="#features">SERVICES</a> 
             <a style={{textDecoration:"none", color:"white", fontWeight:"700"}} href="#blog">BLOG</a>

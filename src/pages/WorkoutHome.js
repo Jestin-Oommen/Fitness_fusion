@@ -12,7 +12,7 @@ const WorkoutHome = () => {
     const [bodyPart, setBodyPart] = useState('all');
   return (
     <Box>
-      <WorkoutNavbar/>
+    <WorkoutNavbar/>
     <HeroBanner />
     <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart} />
     <Exercises setExercises={setExercises} exercises={exercises} bodyPart={bodyPart} />

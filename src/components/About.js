@@ -13,7 +13,7 @@ const About = () => {
       </Typography>
 
       <Typography  sx={{fontSize:"20px", fontWeight:700}} >
-      Welcome to Diet Fusion, your one-stop destination for achieving 
+      Welcome to Fitness Fusion, your one-stop destination for achieving 
       a healthier and fitter lifestyle right from the comfort of your home
       </Typography>
       
@@ -27,7 +27,7 @@ const About = () => {
           background:`rgba(48, 30, 103, 0.50)`}} >
         
             <Typography sx={{mb:2, fontSize:"32px",fontWeight:"700"}}>Our Approach</Typography>
-            <Typography sx={{fontSize:"16px", fontWeight:"700"}}>At Diet Fusion, we understand that each 
+            <Typography sx={{fontSize:"16px", fontWeight:"700"}}>At Fitness Fusion, we understand that each 
                person's body is unique, which is why
                we've developed an interactive body 
                structure assessment. Our aim is to 

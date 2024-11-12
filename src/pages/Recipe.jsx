@@ -43,8 +43,8 @@ function Recipe() {
         </div>
         {activeTab ==="instructions" && (
             <div>
-            <h3 dangerouslySetInnerHTML={{__html: details.summary}}></h3> <br/>
-            <h3 dangerouslySetInnerHTML={{__html:details.instructions}}></h3>
+            <h2  dangerouslySetInnerHTML={{__html: details.summary}}></h2> <br/>
+            <h2  dangerouslySetInnerHTML={{__html:details.instructions}}></h2>
             <br/>
 
         </div>
@@ -54,7 +54,7 @@ function Recipe() {
        {activeTab==="ingredients" &&(
             <ul>
             {details.extendedIngredients.map((ingredient)=>(
-              <li key={ingredient.id}>{ingredient.original}</li>
+              <li style={{fontWeight:"bold", fontSize:"20px"}}  key={ingredient.id}>{ingredient.original}</li>
 
   
             ))}  
